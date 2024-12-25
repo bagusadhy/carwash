@@ -16,10 +16,11 @@ class CarService extends Model
         'price',
         'about',
         'photo',
+        'icon',
         'duration_in_hour',
     ];
 
-    public function setNameAtrribute($value)
+    public function setNameAttribute($value)
     {
         $this->attributes['name'] = $value;
         $this->attributes['slug'] = Str::slug($value);

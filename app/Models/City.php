@@ -12,7 +12,7 @@ class City extends Model
     use HasFactory, SoftDeletes;
     protected $fillable = ['name', 'slug'];
 
-    public function setNameAtrribute($value)
+    public function setNameAttribute($value)
     {
         $this->attributes['name'] = $value;
         $this->attributes['slug'] = Str::slug($value);
