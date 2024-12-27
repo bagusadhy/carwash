@@ -166,7 +166,7 @@ class FrontController extends Controller
         $trx_id = $request->trx_id;
         $phone = $request->phone;
 
-        $booking = BookingTransaction::where('trx_id', $trx_id)->orWhere('phone_number', $phone)->first();
+        $booking = BookingTransaction::where('trx_id', $trx_id)->where('phone_number', $phone)->first();
         if(!$booking){
             return redirect()->back()->with('error', 'Booking not found');
         }

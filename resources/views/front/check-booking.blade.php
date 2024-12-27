@@ -6,13 +6,15 @@
 @section('content')
     <div class="flex flex-col items-center gap-[50px] max-w-[330px] m-auto h-fit w-full py-6">
         <div class="w-[120px] h-[120px] flex shrink-0">
-            <img src="{{ asset('assets/images/icons/illustration7.svg') }}" class="w-full h-full object-contain" alt="icon">
+            <img src="{{ asset('assets/images/icons/illustration7.svg') }}" class="w-full h-full object-contain"
+                alt="icon">
         </div>
         <div class="flex flex-col gap-1 text-center">
             <h1 class="font-bold text-2xl leading-[36px]">Check Booking</h1>
             <p class="text-center px-5 leading-[28px]">For booking details, please fill with correct data</p>
         </div>
-        <form action="{{ route('booking.detail') }}" method="POST" class="w-full rounded-2xl p-5 flex flex-col gap-[26px] bg-white">
+        <form action="{{ route('booking.detail') }}" method="POST"
+            class="w-full rounded-2xl p-5 flex flex-col gap-[26px] bg-white">
             @csrf
             <div class="flex flex-col gap-2">
                 <label for="Book-id" class="font-semibold">Booking ID</label>
@@ -23,7 +25,7 @@
                     </div>
                     <input type="text" name="trx_id" id="Book-id"
                         class="appearance-none outline-none w-full font-semibold placeholder:font-normal placeholder:text-[#909DBF]"
-                        placeholder="Write your booking id">
+                        placeholder="Write your booking id" required>
                 </div>
             </div>
             <div class="flex flex-col gap-2">
