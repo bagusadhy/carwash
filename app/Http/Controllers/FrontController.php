@@ -20,6 +20,7 @@ class FrontController extends Controller
     public function index()
     {
 
+        session()->flush();
         $cities = City::select('slug', 'name')->get();
         $services = CarService::withCount('storeServices')->get();
 
@@ -141,14 +142,8 @@ class FrontController extends Controller
      */
     public function paymentSuccess($trx_id){
         $service = CarService::where('slug', session('service_type'))->first();
-
-        session()->forget('service_type');
-        session()->forget('car_store');
-        session()->forget('customer_name');
-        session()->forget('customer_phone');
-        session()->forget('time');
-
-        return view('front.payment-success', compact('trx_id', 'service'));
+        $phone = session('customer_phone');
+        return view('front.payment-success', compact('trx_id', 'service', 'phone'));
 
     }
 

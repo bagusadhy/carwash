@@ -33,7 +33,7 @@
                         <div
                             class="h-full rounded-[20px] border border-[#E9E8ED] py-4 flex flex-col items-center text-center gap-4 bg-white transition-all duration-300 hover:ring-2 hover:ring-[#FF8E62]">
                             <div class="w-[50px] h-[50px] flex shrink-0">
-                                <img src="{{ asset($service->icon) }}" alt="icon">
+                                <img src="{{ Storage::url($service->icon) }}" alt="icon">
                             </div>
                             <div class="flex flex-col">
                                 <p class="font-semibold text-sm leading-[21px]">{{ $service->name }}</p>

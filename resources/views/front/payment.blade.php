@@ -26,7 +26,7 @@
                 <h2 class="font-semibold">Workshop At</h2>
                 <div class="flex items-center w-full gap-[10px] bg-white">
                     <div class="w-[80px] h-[60px] flex shrink-0 rounded-xl overflow-hidden">
-                        <img src="{{ asset($store->thumbnail) }}" class="w-full h-full object-cover"
+                        <img src="{{ Storage::url($store->thumbnail) }}" class="w-full h-full object-cover"
                             alt="thumbnail">
                     </div>
                     <div class="flex flex-col">
@@ -48,7 +48,7 @@
                 <div class="flex items-center w-full gap-[10px] bg-white justify-between">
                     <div class="flex items-center gap-[10px]">
                         <div class="w-[60px] h-[60px] flex shrink-0">
-                            <img src="{{ asset($service->icon) }}" alt="icon">
+                            <img src="{{ Storage::url($service->icon) }}" alt="icon">
                         </div>
                         <div class="flex flex-col h-fit">
                             <p class="font-semibold">{{ $service->name }}</p>

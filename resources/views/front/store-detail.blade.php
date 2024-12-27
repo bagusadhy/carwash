@@ -27,7 +27,7 @@
                 <div class="swiper-wrapper w-full h-fit">
                     @foreach ($storePhotos as $photo)
                         <div class="swiper-slide !w-[310px] !h-[350px] flex shrink-0 overflow-hidden">
-                            <img src="{{ asset($photo->photo) }}" class="object-cover w-full h-full" alt="thumbnail">
+                            <img src="{{ Storage::url($photo->photo) }}" class="object-cover w-full h-full" alt="thumbnail">
                         </div>
                     @endforeach
                 </div>
@@ -90,7 +90,7 @@
                                     class="rounded-2xl border border-[#E9E8ED] flex items-center justify-between p-4 bg-white">
                                     <div class="flex items-center gap-[10px]">
                                         <div class="w-[60px] h-[60px] flex shrink-0">
-                                            <img src="{{ asset($service->icon) }}" alt="icon">
+                                            <img src="{{ Storage::url($service->icon) }}" alt="icon">
                                         </div>
                                         <div class="flex flex-col h-fit">
                                             <p class="font-semibold">{{ $service->name }}</p>
@@ -282,7 +282,7 @@
                 <!-- Modal content -->
                 <div class="bg-white max-w-[320px] mx-auto flex flex-col h-fit rounded-[20px] pb-4 gap-4 overflow-hidden">
                     <div class="w-full h-[150px] flex shrink-0">
-                        <img src="{{ asset($service->photo) }}" class="w-full h-full object-cover" alt="thumbnail">
+                        <img src="{{ Storage::url($service->photo) }}" class="w-full h-full object-cover" alt="thumbnail">
                     </div>
                     <div class="flex flex-col px-4 gap-4">
                         <div class="flex items-center justify-between">

@@ -24,7 +24,7 @@
                 <div
                     class="flex flex-col gap-4 rounded-[20px] ring-1 ring-[#E9E8ED] pb-4 bg-white overflow-hidden transition-all duration-300 hover:ring-2 hover:ring-[#FF8E62]">
                     <div class="w-full h-[120px] flex shrink-0 overflow-hidden relative">
-                        <img src="{{ asset($store->thumbnail) }}" class="w-full h-full object-cover"
+                        <img src="{{ Storage::url($store->thumbnail) }}" class="w-full h-full object-cover"
                             alt="thumbnail">
                         <p
                             class="rounded-full p-[6px_10px] {{ $store->is_open && !$store->is_full ? 'bg-[#41BE64]' :  'bg-[#F12B3E]'}} w-fit h-fit font-bold text-[10px] leading-[15px] text-white absolute top-4 right-4">
