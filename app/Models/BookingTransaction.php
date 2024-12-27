@@ -23,6 +23,15 @@ class BookingTransaction extends Model
         'time_at',
     ];
 
+    public static function generateUniqueTrxId()
+    {
+        $trxId = 'CW' . mt_rand(10000, 99999) . mt_rand(100, 999);
+        if (self::where('trx_id', $trxId)->exists()) {
+            return self::generateUniqueTrxId();
+        }
+        return $trxId;
+    }
+
 
     public function carService()
     {
